@@ -109,10 +109,7 @@ namespace Practical_Work_II
                 Start();
                 action = Convert.ToInt32(Console.ReadLine());
             }
-            if (action == 4)
-            {
-                Console.WriteLine("Вы успешно вышли из программы");
+            Console.WriteLine("Вы успешно вышли из программы");
             }
-        }
     }
 }

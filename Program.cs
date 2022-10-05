@@ -29,17 +29,20 @@ namespace Practical_Work_II
                 }
                 userNumber = Convert.ToInt32(Console.ReadLine());
             }
-
-            if (userNumber == number)
-            {
-                Console.WriteLine("Угадал");
-            }
-            Start();
+            Console.WriteLine("Угадал");
         }
 
         static void MultiplicationTable()
         {
             int[,] multiplication = new int [10, 10];
+
+            for (int i = 1; i < multiplication.GetLength(0); i++)
+            {
+                for (int j = 1; j < multiplication.GetLength(0); j++)
+                {
+                    multiplication[i, j] = i * j;
+                }
+            }
 
             for (int i = 1; i < multiplication.GetLength(0); i++)
             {
@@ -49,7 +52,6 @@ namespace Practical_Work_II
                 }
                 Console.WriteLine();
             }
-            Start();
         }
 
         static void AllSeparators()
@@ -60,17 +62,18 @@ namespace Practical_Work_II
             number = Console.ReadLine();
             do
             {
-                for (int i = 1; i <= Convert.ToInt32(number); i++)
+                int myNum = Convert.ToInt32(number);    
+                for (int i = 1; i <= myNum; i++)
                 {
-                    if (Convert.ToInt32(number) % i == 0)
+                    if (myNum % i == 0)
                     {
                         Console.Write(i + "\t");
                     }
                 }
+
                 Console.WriteLine();
                 number = Console.ReadLine();
             } while (number != "выйти");
-            Start();
         }
 
         static void Start()
@@ -103,6 +106,7 @@ namespace Practical_Work_II
                         Console.WriteLine("Ошибка");
                         break;
                 }
+                Start();
                 action = Convert.ToInt32(Console.ReadLine());
             }
             if (action == 4)
